@@ -41,6 +41,23 @@ function renderProfile(config) {
 }
 
 function renderLinkButton(link, delay) {
+  if (link.email) {
+    return `
+    <button
+      type="button"
+      class="link-btn link-btn-email"
+      data-email="${link.email}"
+      style="--delay: ${delay}s"
+    >
+      <span class="link-icon" aria-hidden="true">${ICONS[link.icon] || ICONS.mail}</span>
+      <span class="link-title">${link.title}</span>
+      <span class="link-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 8h8v8M16 8l-8 8"/></svg>
+      </span>
+    </button>
+  `;
+  }
+
   return `
     <a
       href="${link.url}"
@@ -128,9 +145,9 @@ function renderSocials(socials) {
 }
 
 function setupSocialClicks() {
-  document.getElementById("socials").addEventListener("click", (e) => {
-    const btn = e.target.closest(".social-btn-native");
-    if (!btn) return;
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-platform]");
+    if (!btn || !IN_APP_SOCIALS.has(btn.dataset.platform)) return;
 
     e.preventDefault();
 
@@ -146,17 +163,60 @@ function setupSocialClicks() {
       return;
     }
 
-    // Same-tab navigation helps mobile apps open the correct profile
     window.location.assign(btn.href);
   });
 }
 
-function showToast(message) {
+function showToast(message, duration = 2500) {
   const toast = document.getElementById("toast");
   toast.textContent = message;
   toast.classList.add("visible");
   clearTimeout(showToast._timer);
-  showToast._timer = setTimeout(() => toast.classList.remove("visible"), 2500);
+  showToast._timer = setTimeout(() => toast.classList.remove("visible"), duration);
+}
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+    const copied = document.execCommand("copy");
+    document.body.removeChild(textarea);
+    return copied;
+  }
+}
+
+async function copyEmail(email) {
+  const copied = await copyText(email);
+  if (copied) {
+    showToast(`Email copied: ${email}`, 3500);
+  } else {
+    showToast(`Email: ${email}`, 5000);
+  }
+}
+
+function setupEmailClicks() {
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-email]");
+    if (!btn) return;
+    e.preventDefault();
+    copyEmail(btn.dataset.email);
+  });
+}
+
+function renderFooter() {
+  const contact = document.getElementById("contact-link");
+  if (contact && CONFIG.contactInstagram) {
+    contact.href = normalizeSocialUrl("instagram", CONFIG.contactInstagram);
+    contact.dataset.platform = "instagram";
+  }
 }
 
 function setupCopyLink() {
@@ -183,5 +243,7 @@ applyTheme(CONFIG.theme);
 renderProfile(CONFIG);
 renderSections(CONFIG.sections);
 renderSocials(CONFIG.socials);
+renderFooter();
 setupSocialClicks();
+setupEmailClicks();
 setupCopyLink();

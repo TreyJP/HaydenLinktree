@@ -219,6 +219,8 @@ body {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
+  font-family: inherit;
+  text-align: left;
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
@@ -542,6 +544,7 @@ body {
   color: var(--text-muted);
   text-decoration: none;
   transition: color 0.2s;
+  cursor: pointer;
 }
 
 .footer-link:hover {

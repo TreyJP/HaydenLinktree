@@ -64,6 +64,11 @@ const CONFIG = {
       title: "Personal",
       links: [
         {
+          title: "Email Me",
+          email: "ascensionfitness1738@gmail.com",
+          icon: "mail",
+        },
+        {
           title: "YOHB — Car Profiles & Events",
           url: "https://yohb.io/",
           icon: "car",
@@ -86,4 +91,6 @@ const CONFIG = {
     { platform: "instagram", url: "https://www.instagram.com/hay.tren/" },
     { platform: "tiktok", url: "https://www.tiktok.com/@haytren2.0?_r=1" },
   ],
+
+  contactInstagram: "https://www.instagram.com/treypresty/",
 };
