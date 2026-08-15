@@ -24,6 +24,11 @@ const CONFIG = {
       title: "Make Money With Peptides",
       links: [
         {
+          title: "Pep Guide Shop",
+          url: "https://pepguide.shop/",
+          icon: "shopping",
+        },
+        {
           title: "Make Money With Peptides",
           url: "https://www.makemoneywithpeptides.com/",
           icon: "globe",
