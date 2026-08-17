@@ -21,13 +21,19 @@ const CONFIG = {
   // Link sections (shown top to bottom)
   sections: [
     {
-      title: "Make Money With Peptides",
+      title: "Pep Guide Shop",
       links: [
         {
           title: "Pep Guide Shop",
           url: "https://pepguide.shop/",
           icon: "shopping",
+          isNew: true,
         },
+      ],
+    },
+    {
+      title: "Make Money With Peptides",
+      links: [
         {
           title: "Make Money With Peptides",
           url: "https://www.makemoneywithpeptides.com/",

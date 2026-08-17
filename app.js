@@ -58,16 +58,19 @@ function renderLinkButton(link, delay) {
   `;
   }
 
+  const newClass = link.isNew ? " link-btn-new" : "";
+  const newBadge = link.isNew ? `<span class="link-badge">New</span>` : "";
+
   return `
     <a
       href="${link.url}"
-      class="link-btn"
+      class="link-btn${newClass}"
       target="_blank"
       rel="noopener noreferrer"
       style="--delay: ${delay}s"
     >
       <span class="link-icon" aria-hidden="true">${ICONS[link.icon] || ICONS.link}</span>
-      <span class="link-title">${link.title}</span>
+      <span class="link-title">${link.title}${newBadge}</span>
       <span class="link-arrow" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
       </span>
