@@ -24,7 +24,7 @@ const CONFIG = {
       title: "Pep Guide Shop",
       links: [
         {
-          title: "Pep Guide Shop",
+          title: "Pep Guide",
           url: "https://pepguide.shop/",
           icon: "shopping",
           isNew: true,
