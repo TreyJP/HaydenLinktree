@@ -29,6 +29,12 @@ const CONFIG = {
           icon: "shopping",
           isNew: true,
         },
+        {
+          title: "PepGuide x Nutricell $10000 UGC Challenge",
+          url: "https://discord.gg/Rx4kSuFxxg",
+          icon: "discord",
+          hoverPopup: "Make Money",
+        },
       ],
     },
     {

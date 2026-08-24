@@ -59,16 +59,21 @@ function renderLinkButton(link, delay) {
   }
 
   const newClass = link.isNew ? " link-btn-new" : "";
+  const popupClass = link.hoverPopup ? " link-btn-has-popup" : "";
   const newBadge = link.isNew ? `<span class="link-badge">New</span>` : "";
+  const popupHtml = link.hoverPopup
+    ? `<span class="link-hover-popup" aria-hidden="true"><span class="popup-cash">💵</span>${link.hoverPopup}<span class="popup-cash">💰</span></span>`
+    : "";
 
   return `
     <a
       href="${link.url}"
-      class="link-btn${newClass}"
+      class="link-btn${newClass}${popupClass}"
       target="_blank"
       rel="noopener noreferrer"
       style="--delay: ${delay}s"
     >
+      ${popupHtml}
       <span class="link-icon" aria-hidden="true">${ICONS[link.icon] || ICONS.link}</span>
       <span class="link-title">${link.title}${newBadge}</span>
       <span class="link-arrow" aria-hidden="true">
