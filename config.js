@@ -21,6 +21,31 @@ const CONFIG = {
   // Link sections (shown top to bottom)
   sections: [
     {
+      title: "OpenVault",
+      links: [
+        {
+          title: "OpenVault Telegram",
+          url: "https://t.me/openvaultbio",
+          icon: "telegram",
+        },
+        {
+          title: "OpenVault",
+          url: "https://openvault.bio",
+          icon: "globe",
+        },
+        {
+          title: "OpenVault Discord",
+          url: "https://discord.gg/dVkdrsecu",
+          icon: "discord",
+        },
+        {
+          title: "Appeal.gg",
+          url: "https://appeal.gg/jZ6PecnaUF",
+          icon: "link",
+        },
+      ],
+    },
+    {
       title: "Pep Guide Shop",
       links: [
         {
@@ -49,31 +74,6 @@ const CONFIG = {
           title: "MMWP Discord",
           url: "https://discord.gg/BpwhbN7eR",
           icon: "discord",
-        },
-      ],
-    },
-    {
-      title: "OpenVault",
-      links: [
-        {
-          title: "OpenVault",
-          url: "https://openvault.bio",
-          icon: "globe",
-        },
-        {
-          title: "OpenVault Discord",
-          url: "https://discord.gg/dVkdrsecu",
-          icon: "discord",
-        },
-        {
-          title: "OpenVault Telegram",
-          url: "https://t.me/openvaultbio",
-          icon: "telegram",
-        },
-        {
-          title: "Appeal.gg",
-          url: "https://appeal.gg/jZ6PecnaUF",
-          icon: "link",
         },
       ],
     },
