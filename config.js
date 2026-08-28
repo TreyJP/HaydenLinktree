@@ -30,7 +30,7 @@ const CONFIG = {
         },
         {
           title: "OpenVault",
-          url: "https://openvault.bio",
+          url: "https://openvault.bio/register?ref=VAULT",
           icon: "globe",
         },
         {
