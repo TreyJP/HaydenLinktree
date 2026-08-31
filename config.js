@@ -34,6 +34,11 @@ const CONFIG = {
           icon: "globe",
         },
         {
+          title: "Closed Vault — Find & Report Scammers",
+          url: "https://discord.gg/qnTy62tkQg",
+          icon: "discord",
+        },
+        {
           title: "OpenVault Discord",
           url: "https://discord.gg/dVkdrsecu",
           icon: "discord",
