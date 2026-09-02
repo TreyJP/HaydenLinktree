@@ -2,7 +2,16 @@
   "name": "hayden-linktree",
   "private": true,
   "scripts": {
-    "dev": "npx serve -l 3456",
-    "start": "npx serve -l 3456"
+    "dev": "node server.js",
+    "start": "node server.js",
+    "hash-password": "node scripts/hash-password.js"
+  },
+  "dependencies": {
+    "@vercel/blob": "^0.27.3",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2"
   }
 }

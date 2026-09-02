@@ -1,4 +1,5 @@
-// ─── Edit everything below to customize your page ───
+// Deprecated — edit links at /admin instead.
+// This file is kept as a backup reference only.
 
 const CONFIG = {
   name: "Hayden",

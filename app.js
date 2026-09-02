@@ -219,10 +219,10 @@ function setupEmailClicks() {
   });
 }
 
-function renderFooter() {
+function renderFooter(config) {
   const contact = document.getElementById("contact-link");
-  if (contact && CONFIG.contactInstagram) {
-    contact.href = normalizeSocialUrl("instagram", CONFIG.contactInstagram);
+  if (contact && config.contactInstagram) {
+    contact.href = normalizeSocialUrl("instagram", config.contactInstagram);
     contact.dataset.platform = "instagram";
   }
 }
@@ -242,16 +242,30 @@ function trackClick(label) {
   /* Hook for analytics — e.g. gtag('event', 'click', { link: label }) */
 }
 
-document.getElementById("links").addEventListener("click", (e) => {
-  const btn = e.target.closest(".link-btn");
-  if (btn) trackClick(btn.querySelector(".link-title")?.textContent);
-});
+async function init() {
+  try {
+    const res = await fetch("/api/config");
+    if (!res.ok) throw new Error("Failed to load config");
+    const CONFIG = await res.json();
 
-applyTheme(CONFIG.theme);
-renderProfile(CONFIG);
-renderSections(CONFIG.sections);
-renderSocials(CONFIG.socials);
-renderFooter();
-setupSocialClicks();
-setupEmailClicks();
-setupCopyLink();
+    applyTheme(CONFIG.theme);
+    renderProfile(CONFIG);
+    renderSections(CONFIG.sections);
+    renderSocials(CONFIG.socials);
+    renderFooter(CONFIG);
+    setupSocialClicks();
+    setupEmailClicks();
+    setupCopyLink();
+
+    document.getElementById("links").addEventListener("click", (e) => {
+      const btn = e.target.closest(".link-btn");
+      if (btn) trackClick(btn.querySelector(".link-title")?.textContent);
+    });
+  } catch (err) {
+    console.error(err);
+    document.getElementById("display-name").textContent = "Unable to load links";
+    document.getElementById("bio").textContent = "Please refresh the page.";
+  }
+}
+
+init();

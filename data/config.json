@@ -1,0 +1,131 @@
+{
+  "name": "Hayden",
+  "bio": "Creator · Builder · All my links below",
+  "avatar": "haydenpfp.jpeg",
+  "theme": {
+    "background": "#0f0f1a",
+    "accent": "#7c3aed",
+    "accentHover": "#6d28d9",
+    "text": "#ffffff",
+    "textMuted": "rgba(255,255,255,0.65)",
+    "linkBg": "rgba(255,255,255,0.08)",
+    "linkBorder": "rgba(255,255,255,0.12)"
+  },
+  "sections": [
+    {
+      "id": "sec-openvault",
+      "title": "OpenVault",
+      "links": [
+        {
+          "id": "link-ov-telegram",
+          "title": "OpenVault Telegram",
+          "url": "https://t.me/openvaultbio",
+          "icon": "telegram"
+        },
+        {
+          "id": "link-ov-site",
+          "title": "OpenVault",
+          "url": "https://openvault.bio/register?ref=VAULT",
+          "icon": "globe"
+        },
+        {
+          "id": "link-closed-vault",
+          "title": "Locked Vault — Find & Report Scammers",
+          "url": "https://discord.gg/qnTy62tkQg",
+          "icon": "discord"
+        },
+        {
+          "id": "link-ov-discord",
+          "title": "OpenVault Discord",
+          "url": "https://discord.gg/dVkdrsecu",
+          "icon": "discord"
+        },
+        {
+          "id": "link-appeal",
+          "title": "Appeal.gg",
+          "url": "https://appeal.gg/jZ6PecnaUF",
+          "icon": "link"
+        }
+      ]
+    },
+    {
+      "id": "sec-pepguide",
+      "title": "Pep Guide Shop",
+      "links": [
+        {
+          "id": "link-pep-shop",
+          "title": "Pep Guide",
+          "url": "https://pepguide.shop/",
+          "icon": "shopping",
+          "isNew": true
+        },
+        {
+          "id": "link-pep-ugc",
+          "title": "PepGuide x Nutricell $10000 UGC Challenge",
+          "url": "https://discord.gg/Rx4kSuFxxg",
+          "icon": "discord",
+          "hoverPopup": "Make Money"
+        }
+      ]
+    },
+    {
+      "id": "sec-mmwp",
+      "title": "Make Money With Peptides",
+      "links": [
+        {
+          "id": "link-mmwp-site",
+          "title": "Make Money With Peptides",
+          "url": "https://www.makemoneywithpeptides.com/",
+          "icon": "globe"
+        },
+        {
+          "id": "link-mmwp-discord",
+          "title": "MMWP Discord",
+          "url": "https://discord.gg/BpwhbN7eR",
+          "icon": "discord"
+        }
+      ]
+    },
+    {
+      "id": "sec-personal",
+      "title": "Personal",
+      "links": [
+        {
+          "id": "link-email",
+          "title": "Email Me",
+          "email": "ascensionfitness1738@gmail.com",
+          "icon": "mail"
+        },
+        {
+          "id": "link-yohb",
+          "title": "YOHB — Car Profiles & Events",
+          "url": "https://yohb.io/",
+          "icon": "car"
+        },
+        {
+          "id": "link-ascension",
+          "title": "Ascension Coaching Discord",
+          "url": "https://discord.gg/MfRxCWHTmv",
+          "icon": "discord"
+        },
+        {
+          "id": "link-haytren-discord",
+          "title": "Haytren Personal Discord",
+          "url": "https://discord.gg/vftMXZqhMF",
+          "icon": "discord"
+        }
+      ]
+    }
+  ],
+  "socials": [
+    {
+      "platform": "instagram",
+      "url": "https://www.instagram.com/hay.tren/"
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://www.tiktok.com/@haytren2.0?_r=1"
+    }
+  ],
+  "contactInstagram": "https://www.instagram.com/treypresty/"
+}
