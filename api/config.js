@@ -1,4 +1,4 @@
-const { handleConfigGet, handleConfigPut } = require("../../lib/handlers");
+const { handleConfigGet, handleConfigPut } = require("../lib/handlers");
 
 module.exports = async (req, res) => {
   if (req.method === "GET") return handleConfigGet(req, res);

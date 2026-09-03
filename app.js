@@ -242,11 +242,19 @@ function trackClick(label) {
   /* Hook for analytics — e.g. gtag('event', 'click', { link: label }) */
 }
 
+async function loadConfig() {
+  const res = await fetch("/api/config");
+  if (res.ok) return res.json();
+
+  const fallback = await fetch("/data/config.json");
+  if (fallback.ok) return fallback.json();
+
+  throw new Error("Failed to load config");
+}
+
 async function init() {
   try {
-    const res = await fetch("/api/config");
-    if (!res.ok) throw new Error("Failed to load config");
-    const CONFIG = await res.json();
+    const CONFIG = await loadConfig();
 
     applyTheme(CONFIG.theme);
     renderProfile(CONFIG);
